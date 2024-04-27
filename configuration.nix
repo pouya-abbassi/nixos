@@ -152,7 +152,7 @@
 
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/src/nixos";
-      ngc = "nix store gc";
+      ngc = "sudo sudo nix-collect-garbage --delete-older-than 2d";
       nup = "sudo nix-channel --update";
 
       cat = "bat";
