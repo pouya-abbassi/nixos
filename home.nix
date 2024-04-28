@@ -23,8 +23,8 @@
     dolphin
     dunst
     encfs
-    fg42.outputs.packages.x86_64-linux.default
     ffmpeg
+    fg42.outputs.packages.x86_64-linux.default
     file
     firefox
     gimp
@@ -53,9 +53,11 @@
     nodePackages.svgo
     obs-studio
     parted
+    pass
     pavucontrol
     pcmanfm
     pinentry-curses
+    protonmail-bridge-gui
     protonvpn-cli
     protonvpn-gui
     ripgrep
