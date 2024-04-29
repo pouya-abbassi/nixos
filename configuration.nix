@@ -48,6 +48,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+
   networking.extraHosts = ''
     16.16.107.36 bildigo.server
     16.170.108.152 bildigo.staging
