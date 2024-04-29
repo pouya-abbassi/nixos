@@ -20,6 +20,7 @@
     btop
     clojure
     clojure-lsp
+    dig
     dolphin
     dunst
     encfs
@@ -49,6 +50,7 @@
     libsForQt5.skanlite
     lxappearance
     lxappearance
+    netcat
     networkmanagerapplet
     nix-tree
     nodePackages.svgo
@@ -77,6 +79,7 @@
     thunderbird
     tig
     tmux
+    traceroute
     tree
     ungoogled-chromium
     unzip
