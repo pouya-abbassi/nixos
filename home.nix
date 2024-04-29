@@ -46,6 +46,7 @@
     librewolf
     libsForQt5.filelight
     libsForQt5.qt5ct
+    libsForQt5.skanlite
     lxappearance
     lxappearance
     networkmanagerapplet

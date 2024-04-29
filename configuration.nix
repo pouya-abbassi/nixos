@@ -49,8 +49,9 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking.extraHosts = ''
-    16.170.165.251 bildigo.server
-    13.49.137.177 bildigo.staging
+    16.16.107.36 bildigo.server
+    16.170.108.152 bildigo.staging
+    136.244.91.182 bildigo.community
   '';
 
   # Configure network proxy if necessary
@@ -90,6 +91,8 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable SANE to scan documents.
+  hardware.sane.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -127,7 +130,7 @@
   users.users.pouya = {
     isNormalUser = true;
     description = "Pouya";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "disk" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "disk" "scanner" "lp" ];
     packages = with pkgs; [
       bat
       gnupg
