@@ -1,4 +1,4 @@
-{ config, pkgs, fg42, ... }:
+{ config, pkgs, fg42, lib, ... }:
 
 {
   home.username = "pouya";
@@ -105,15 +105,20 @@
     style = builtins.readFile ./waybar/style.css;
   };
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = lib.mkForce (import ./hypr/hyprland.nix);
+    xwayland.enable = true;
+  };
+
   home.file = {
-  ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-  ".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
-  ".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/src/nixos/wall.jpg
-    wallpaper = , ~/src/nixos/wall.jpg
-    splash = false
-    ipc = off
-  '';
+    ".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
+    ".config/hypr/hyprpaper.conf".text = ''
+      preload = ~/src/nixos/wall.jpg
+      wallpaper = , ~/src/nixos/wall.jpg
+      splash = false
+      ipc = off
+    '';
 
   };
 
