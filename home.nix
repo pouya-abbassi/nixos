@@ -20,6 +20,7 @@
     btop
     clojure
     clojure-lsp
+    darktable
     dig
     dolphin
     dunst
@@ -66,7 +67,7 @@
     ripgrep
     rofi-wayland
     siril
-    slack notify
+    slack
     smartmontools
     spotify
     sublime
@@ -78,6 +79,7 @@
     thefuck
     thunderbird
     tig
+    tldr
     tmux
     traceroute
     tree
