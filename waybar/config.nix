@@ -3,31 +3,22 @@
     layer = "top"; # Waybar at top layer
     position = "top"; # Waybar position (top|bottom|left|right)
     height = 24; # Waybar height (to be removed for auto height)
-    # width = 1280; # Waybar width
     spacing = 4; # Gaps between modules (4px)
-    # Choose the order of the modules
     modules-left = [
       "hyprland/workspaces"
-      #"sway/mode"
-      #"custom/media"
     ];
     modules-center = [
       "hyprland/window"
     ];
     modules-right = [
-      "mpd"
       "idle_inhibitor"
       "pulseaudio"
       "network"
-      #"power-profiles-daemon"
       "cpu"
       "memory"
       "temperature"
       "backlight"
-      #"keyboard-state"
-      #"sway/language"
       "battery"
-      #"battery#bat2"
       "clock"
       "tray"
     ];
@@ -37,63 +28,10 @@
       # all-outputs = true;
       warp-on-scroll = false;
       on-click = "activate";
-      # format = "{icon}";
-      # format-icons = {
-      # 1 = "";
-      # 2 = "";
-      # 3 = "";
-      # 9 = "";
-      # 10 = "";
       urgent = "";
       active = "";
       # default = "";
-      #},
       sort-by-number = true;
-    };
-    keyboard-state = {
-      numlock = true;
-      capslock = true;
-      format = "{name} {icon}";
-      format-icons = {
-        locked = "";
-        unlocked = "";
-      };
-    };
-    "sway/mode" = {
-      format = "<span style=\"italic\">{}</span>";
-    };
-    "sway/scratchpad" = {
-      format = "{icon} {count}";
-      show-empty = false;
-      format-icons = ["" ""];
-      tooltip = true;
-      tooltip-format = "{app}: {title}";
-    };
-    mpd = {
-      format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-      format-disconnected = "Disconnected ";
-      format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
-      unknown-tag = "N/A";
-      interval = 5;
-      consume-icons = {
-        on = " ";
-      };
-      random-icons = {
-        off = "<span color=\"#f53c3c\"></span> ";
-        on = " ";
-      };
-      repeat-icons = {
-        on = " ";
-      };
-      single-icons = {
-        on = "1 ";
-      };
-      state-icons = {
-        paused = "";
-        playing = "";
-      };
-      tooltip-format = "MPD (connected)";
-      tooltip-format-disconnected = "MPD (disconnected)";
     };
     idle_inhibitor = {
       format = "{icon}";
@@ -109,7 +47,6 @@
     clock = {
       # timezone = "America/New_York";
       tooltip-format = "<big>{:%F %a}</big>\n<tt><small>{calendar}</small></tt>";
-      # tooltip-format = "<tt><small>{calendar}</small></tt>";
       format-alt = "{:%Y-%m-%d}";
     };
     cpu = {
@@ -120,21 +57,16 @@
       format = "{}% ";
     };
     temperature = {
-      # thermal-zone = 2;
-      # hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
       critical-threshold = 80;
-      # format-critical = "{temperatureC}°C {icon}";
       format = "{temperatureC}°C {icon}";
-      format-icons = ["" "" ""];
+      format-icons = [ "" "" "" ];
     };
     backlight = {
-      # device = "acpi_video1";
       format = "{percent}% {icon}";
-      format-icons = ["" "" "" "" "" "" "" "" ""];
+      format-icons = [ "" "" "" "" "" "" "" "" "" ];
     };
     battery = {
       states = {
-        # good = 95;
         warning = 30;
         critical = 15;
       };
@@ -143,26 +75,9 @@
       format-charging = "{capacity}% ";
       format-plugged = "{capacity}% ";
       format-alt = "{time} {icon}";
-      # format-good = ""; # An empty format will hide the module
-      # format-full = "";
-      format-icons = ["" "" "" "" ""];
-    };
-    "battery#bat2" = {
-      bat = "BAT2";
-    };
-    power-profiles-daemon = {
-      format = "{icon}";
-      tooltip-format = "Power profile: {profile}\nDriver: {driver}";
-      tooltip = true;
-      format-icons = {
-      default = "";
-      performance = "";
-      balanced = "";
-      power-saver = "";
-      };
+      format-icons = [ "" "" "" "" "" ];
     };
     network = {
-      # interface = "wlp2*"; # (Optional) To force the use of this interface
       format-wifi = "{essid} ({signalStrength}%) ";
       format-ethernet = "{ipaddr}/{cidr} ";
       tooltip-format = "{ifname} via {gwaddr} ";
@@ -171,7 +86,7 @@
       format-alt = "{ifname}: {ipaddr}/{cidr}";
     };
     pulseaudio = {
-      # scroll-step = 1; # %, can be a float
+      scroll-step = 5;
       format = "{volume}% {icon} {format_source}";
       format-bluetooth = "{volume}% {icon} {format_source}";
       format-bluetooth-muted = " {icon} {format_source}";
@@ -185,21 +100,9 @@
         phone = "";
         portable = "";
         car = "";
-        default = ["" "" ""];
+        default = [ "" "" "" ];
       };
       on-click = "pavucontrol";
-    };
-    "custom/media" = {
-      format = "{icon} {}";
-      return-type = "json";
-      max-length = 40;
-      format-icons = {
-        spotify = "";
-        default = "🎜";
-      };
-      escape = true;
-      # exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"; # Script in resources folder
-      # exec = "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"; # Filter player based on name
     };
   };
 }
