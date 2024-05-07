@@ -62,6 +62,7 @@
       format-icons = [ "" "" "" ];
     };
     backlight = {
+      scroll-step = 5;
       format = "{percent}% {icon}";
       format-icons = [ "" "" "" "" "" "" "" "" "" ];
     };
