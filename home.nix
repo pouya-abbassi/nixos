@@ -18,6 +18,7 @@
     ark
     blender-hip
     btop
+    calibre
     clojure
     clojure-lsp
     darktable
