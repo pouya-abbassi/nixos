@@ -84,6 +84,8 @@
     tmux
     traceroute
     tree
+    udiskie
+    udisks
     ungoogled-chromium
     unzip
     v2raya
