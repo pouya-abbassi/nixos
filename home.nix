@@ -71,6 +71,7 @@
     slack
     smartmontools
     spotify
+    sshfs
     sublime
     swayidle
     sxiv
