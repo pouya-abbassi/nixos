@@ -19,6 +19,7 @@
     blender-hip
     btop
     calibre
+    clang-tools
     clojure
     clojure-lsp
     darktable
