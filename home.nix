@@ -91,6 +91,7 @@
     ungoogled-chromium
     unzip
     v2raya
+    ventoy
     vim
     vlc
     wget
