@@ -24,6 +24,7 @@
     file
     hdparm
     htop
+    iotop
     netcat
     nix-tree
     parted
