@@ -137,13 +137,9 @@
     settings = import ./hypr/hyprlock.nix;
   };
 
-  home.file = {
-    ".config/hypr/hyprpaper.conf".text = ''
-      preload = ~/src/nixos/wall.jpg
-      wallpaper = , ~/src/nixos/wall.jpg
-      splash = false
-      ipc = off
-    '';
+  services.hyprpaper = {
+    enable = true;
+    settings = import ./hypr/hyprpaper.nix;
   };
 
   programs.direnv = {
