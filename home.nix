@@ -132,8 +132,12 @@
     xwayland.enable = true;
   };
 
+  programs.hyprlock = {
+    enable = true;
+    settings = import ./hypr/hyprlock.nix;
+  };
+
   home.file = {
-    ".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
     ".config/hypr/hyprpaper.conf".text = ''
       preload = ~/src/nixos/wall.jpg
       wallpaper = , ~/src/nixos/wall.jpg
