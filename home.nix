@@ -109,7 +109,6 @@
     nodejs_22
     terraform
     tig
-    vim
     virtualenv
   ];
 
@@ -118,6 +117,11 @@
     extraPackages = epkgs: [
       epkgs.magit
     ];
+  };
+
+  programs.vim = {
+    enable = true;
+    extraConfig = builtins.readFile ./vimrc;
   };
 
   programs.waybar = {
