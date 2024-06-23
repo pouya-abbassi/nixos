@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  stylix.image = ./xor.png;
+  stylix.enable = true;
+  stylix.image = ./wall.jpg;
   stylix.polarity = "dark";
   stylix.fonts = {
     monospace = {
