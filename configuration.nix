@@ -166,6 +166,8 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
 
+    shellInit = "eval \"$(direnv hook zsh)\"";
+
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/src/nixos";
       ngc = "sudo nix-collect-garbage --delete-older-than 2d";
