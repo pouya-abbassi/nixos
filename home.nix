@@ -44,6 +44,7 @@
     unzip
     v2raya
     wget
+    whois
     zip
 
     # desktop
