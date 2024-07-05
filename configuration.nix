@@ -61,8 +61,8 @@
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
   networking.extraHosts = ''
-    16.16.107.36 bildigo.server
-    16.170.108.152 bildigo.staging
+    13.50.248.62 bildigo.server
+    13.50.239.175 bildigo.staging
     136.244.91.182 bildigo.community
   '';
 
