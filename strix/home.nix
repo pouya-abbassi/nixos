@@ -4,31 +4,31 @@
   home.username = "pouya";
   home.homeDirectory = "/home/pouya";
 
-  home.stateVersion = "23.11"; # Please read the comment before changing.
-
-  nixpkgs.config.allowUnfree = true;
+  home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-
     # utils
     ack
     aria2
+    bat
     btop
+    deploy-rs
     dig
     encfs
     ffmpeg
     file
+    gnupg
     hdparm
     htop
     iotop
+    killall
+    lsof
+    mlocate
     netcat
     nix-tree
     parted
     pass
+    pciutils
     pinentry-curses
     protonvpn-cli
     ripgrep
@@ -42,10 +42,14 @@
     udiskie
     udisks
     unzip
+    usbutils
     v2raya
     wget
     whois
     zip
+    zsh
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 
     # desktop
     dunst
@@ -66,7 +70,7 @@
     darktable
     dolphin
     gimp
-    gnome.gnome-disk-utility
+    gnome-disk-utility
     gparted
     graphite-kde-theme
     inkscape
@@ -122,7 +126,7 @@
 
   programs.vim = {
     enable = true;
-    extraConfig = builtins.readFile ./vimrc;
+    extraConfig = builtins.readFile ../common/vimrc;
   };
 
   programs.waybar = {
