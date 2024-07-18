@@ -1,22 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    auto-optimise-store = true;
-    substituters = [
-      "https://nix-community.cachix.org"
-      "https://cache.nixos.org/"
-    ];
-    trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
+  imports = [
+    ./hardware-configuration.nix
+    ../common/configuration.nix
+  ];
 
   powerManagement.enable = true;
   services.tlp = {
@@ -58,11 +46,9 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
-
   networking.extraHosts = ''
-    13.50.248.62 bildigo.server
-    13.50.239.175 bildigo.staging
+    51.20.101.249 bildigo.server
+    16.170.13.15 bildigo.staging
     136.244.91.182 bildigo.community
   '';
 
@@ -103,12 +89,15 @@
   console.keyMap = "dvorak";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.cnijfilter_4_00 ];
+  };
   # Enable SANE to scan documents.
-  hardware.sane.enable = true;
+  # hardware.sane.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  #sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -139,71 +128,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pouya = {
-    isNormalUser = true;
-    description = "Pouya";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "disk" "scanner" "lp" ];
-    packages = with pkgs; [
-      bat
-      gnupg
-      killall
-      lsof
-      mlocate
-      zsh
-      zsh-autosuggestions
-      zsh-syntax-highlighting
-    ];
-  };
-
-  users.defaultUserShell = pkgs.zsh;
-  users.users.pouya.shell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellInit = "eval \"$(direnv hook zsh)\"";
-
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/src/nixos";
-      ngc = "sudo nix-collect-garbage --delete-older-than 2d";
-      nup = "sudo nix-channel --update";
-
-      cat = "bat";
-
-      "..." = "../..";
-      "...." = "../../..";
-      "....." = "../../../..";
-      "......" = "../../../../..";
-    };
-
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" "lein" "thefuck" ];
-      theme = "bira";
-    };
-  };
-
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
-  programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
-  };
-
-  services.locate.enable = true;
-  services.locate.package = pkgs.mlocate;
-  services.locate.localuser = null;
-
   services.udisks2.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Docker
   virtualisation.docker.enable = true;
@@ -211,7 +139,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  vim
   #  wget
   #  dive # look into docker image layers
   #  podman-tui # status of containers in the terminal
