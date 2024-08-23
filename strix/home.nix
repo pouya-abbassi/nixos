@@ -59,6 +59,7 @@
     hyprshot
     libnotify
     networkmanagerapplet
+    nvtopPackages.amd
     rofi-wayland
     swayidle
     wl-clipboard
