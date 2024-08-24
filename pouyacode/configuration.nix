@@ -11,6 +11,7 @@
   zramSwap.enable = false;
 
   networking = {
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
     hostName = "pouyacode";
     domain = "pouyacode.net";
     firewall = {
