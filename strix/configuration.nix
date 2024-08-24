@@ -149,6 +149,15 @@
 
   virtualisation.docker.enable = true;
 
+  services.clamav = {
+    scanner = {
+      enable = true;
+      interval = "*-*-* 19:00:00";
+    };
+    updater.enable = true;
+    daemon.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     mako
   ];
