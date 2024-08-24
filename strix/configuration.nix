@@ -44,7 +44,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
-    networkmanager.enable = true;
+    nameservers = [ "127.0.0.1" "::1" ];
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
     hostName = "nixos";
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     extraHosts = ''
@@ -65,6 +69,31 @@
     # };
   };
 
+  services.dnscrypt-proxy2 = {
+    enable = true;
+    settings = {
+      ipv6_servers = true;
+      require_dnssec = true;
+
+      sources.public-resolvers = {
+        urls = [
+          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
+          "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
+        ];
+        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
+        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
+      };
+
+      server_names = [
+        "adguard-dns-doh"
+      ];
+    };
+  };
+
+  systemd.services.dnscrypt-proxy2.serviceConfig = {
+    StateDirectory = "dnscrypt-proxy";
+  };
+
   users.users.pouya = {
     isNormalUser = true;
     description = "Pouya";
@@ -79,24 +108,22 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-  # Configure keymap in X11
   services.xserver = {
+    enable = true;
     xkb.layout = "us,ir";
     xkb.variant = "dvorak,";
     xkb.options = "grp:shifts_toggle";
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    # Enable touchpad support (enabled default in most desktopManager).
+    # services.xserver.libinput.enable = true;
   };
 
   # Configure console keymap
@@ -138,9 +165,6 @@
     };
   };
   services.blueman.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
