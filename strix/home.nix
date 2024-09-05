@@ -24,6 +24,7 @@
     killall
     lsof
     mlocate
+    mtr
     netcat
     nix-tree
     parted
