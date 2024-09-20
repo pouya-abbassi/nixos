@@ -13,7 +13,10 @@
       url = "github:danth/stylix";
     };
 
-    fg42.url = "git+https://git.sr.ht/~lxsameer/FG42";
+    fg42 = {
+      url = "git+https://git.sr.ht/~lxsameer/FG42";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     deploy-rs.url = "github:serokell/deploy-rs";
   };
