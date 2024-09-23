@@ -153,6 +153,8 @@
     settings = import ./hypr/hyprpaper.nix;
   };
 
+  services.gnome-keyring.enable = true;
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
