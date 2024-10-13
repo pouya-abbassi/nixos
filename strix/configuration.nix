@@ -97,7 +97,16 @@
   users.users.pouya = {
     isNormalUser = true;
     description = "Pouya";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "disk" "scanner" "lp" ];
+    extraGroups = [
+      "audio"
+      "dialout"
+      "disk"
+      "docker"
+      "lp"
+      "networkmanager"
+      "scanner"
+      "wheel"
+    ];
     packages = with pkgs; [
     ];
   };
