@@ -12,7 +12,6 @@
     aria2
     bat
     btop
-    deploy-rs
     dig
     encfs
     ffmpeg
@@ -112,7 +111,7 @@
     clang-tools
     clojure
     clojure-lsp
-    fg42.outputs.packages.x86_64-linux.default
+    fg42.outputs.packages.${system}.default
     git
     nodePackages.svgo
     nodejs_22
