@@ -88,6 +88,7 @@
     pavucontrol
     pcmanfm
     protonmail-bridge-gui
+    protonup-qt
     protonvpn-gui
     siril
     slack

@@ -138,6 +138,12 @@
   # Configure console keymap
   console.keyMap = "dvorak";
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Steam Remote Play
+    localNetworkGameTransfers.openFirewall = true; # Local Network Game Transfers
+  };
+
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
