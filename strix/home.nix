@@ -71,6 +71,7 @@
     calibre
     darktable
     dolphin
+    evince
     gimp
     gnome-disk-utility
     gparted
