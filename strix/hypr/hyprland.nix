@@ -3,9 +3,9 @@
   #monitor=,preferred,auto,auto
   #monitor=DP-1, 1920x1200, 320x0, 1
   monitor = [
-    #"HDMI-A-1, 1920x1200, 320x0, 1"
-    "DP-1, 1920x1200, 320x0, 1"
-    "eDP-1, 2560x1440, 0x1200, 1"
+    "HDMI-A-1, 3440x1440, 0x0, 1"
+    "DP-1, 3440x1440, 0x0, 1"
+    "eDP-1, 2560x1440, 3440x0, 1"
   ];
 
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
