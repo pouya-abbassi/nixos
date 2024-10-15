@@ -156,6 +156,8 @@
 
   services.gnome-keyring.enable = true;
 
+  services.mpris-proxy.enable = true;
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
