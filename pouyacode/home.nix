@@ -21,6 +21,7 @@
     lsof
     mlocate
     netcat
+    nethogs
     nix-tree
     parted
     ripgrep
@@ -46,6 +47,10 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.

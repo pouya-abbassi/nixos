@@ -25,6 +25,7 @@
     mlocate
     mtr
     netcat
+    nethogs
     nix-tree
     parted
     pass
@@ -165,7 +166,7 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
