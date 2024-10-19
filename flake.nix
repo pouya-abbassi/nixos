@@ -23,9 +23,19 @@
       url = "github:serokell/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    homeage = {
+      url = "github:aarongpower/homeage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, fg42, deploy-rs, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, stylix, fg42, deploy-rs, agenix, homeage, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -33,6 +43,7 @@
       };
 
       nativeBuildInputs = with pkgs; [
+        agenix.packages.${system}.default
         deploy-rs.packages.${system}.default
       ];
     in rec {
@@ -43,11 +54,15 @@
             ./strix/configuration.nix
             ./strix/stylix.nix
             stylix.nixosModules.stylix
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.pouya = import ./strix/home.nix;
+              home-manager.users.pouya.imports = [
+                ./strix/home.nix
+                homeage.homeManagerModules.homeage
+              ];
               home-manager.extraSpecialArgs = { inherit fg42 system; };
             }
           ];
