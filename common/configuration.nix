@@ -41,6 +41,7 @@
       nup = "sudo nix-channel --update";
 
       cat = "bat";
+      noti = "noti -g -f ~/.config/noti.yaml";
 
       "..." = "../..";
       "...." = "../../..";

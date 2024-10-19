@@ -27,6 +27,7 @@
     netcat
     nethogs
     nix-tree
+    noti
     parted
     pass
     pciutils
@@ -163,6 +164,16 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  homeage = {
+    identityPaths = [ "~/.ssh/id_ed25519" ];
+    installationType = "activation";
+
+    file."noti" = {
+      source = ../secrets/noti.age;
+      symlinks = [ "/home/pouya/.config/noti.yaml" ];
+    };
   };
 
   home.sessionVariables = {
