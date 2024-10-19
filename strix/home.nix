@@ -122,33 +122,50 @@
     virtualenv
   ];
 
-  programs.emacs = {
-    enable = true;
-    extraPackages = epkgs: [
-      epkgs.magit
-    ];
-  };
-
-  programs.vim = {
-    enable = true;
-    extraConfig = builtins.readFile ../common/vimrc;
-  };
-
-  programs.waybar = {
-    enable = true;
-    settings = import ./waybar/config.nix;
-    style = builtins.readFile ./waybar/style.css;
+  programs = {
+    zsh = {
+      shellAliases = {
+        nrs = "sudo nixos-rebuild switch --flake ~/src/nixos";
+        ngc = "sudo nix-collect-garbage --delete-older-than 2d";
+        nup = "sudo nix-channel --update";
+        cat = "bat";
+        noti = "noti -g -f ~/.config/noti.yaml";
+      };
+      localVariables = {
+        EDITOR = "vim";
+      };
+    };
+    emacs = {
+      enable = true;
+      extraPackages = epkgs: [
+        epkgs.magit
+      ];
+    };
+    vim = {
+      enable = true;
+      extraConfig = builtins.readFile ../common/vimrc;
+    };
+    waybar = {
+      enable = true;
+      settings = import ./waybar/config.nix;
+      style = builtins.readFile ./waybar/style.css;
+    };
+    hyprlock = {
+      enable = true;
+      settings = import ./hypr/hyprlock.nix;
+    };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+    home-manager.enable = true;
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = lib.mkForce (import ./hypr/hyprland.nix);
     xwayland.enable = true;
-  };
-
-  programs.hyprlock = {
-    enable = true;
-    settings = import ./hypr/hyprlock.nix;
   };
 
   services.hyprpaper = {
@@ -159,12 +176,6 @@
   services.gnome-keyring.enable = true;
 
   services.mpris-proxy.enable = true;
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
-  };
 
   homeage = {
     identityPaths = [ "~/.ssh/id_ed25519" ];
@@ -179,7 +190,4 @@
   home.sessionVariables = {
     EDITOR = "vim";
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

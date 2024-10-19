@@ -5,4 +5,5 @@ let
 in
 {
   "noti.age".publicKeys = [ pouya ];
+  "nextdns.age".publicKeys = [ pouya ];
 }
