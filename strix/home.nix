@@ -28,6 +28,7 @@
     nethogs
     nix-tree
     noti
+    papeer
     parted
     pass
     pciutils
@@ -105,7 +106,7 @@
     # browsers
     firefox
     librewolf
-    ungoogled-chromium
+    chromium
 
     # code
     ansible
