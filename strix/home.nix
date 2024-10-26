@@ -113,7 +113,6 @@
     clang-tools
     clojure
     clojure-lsp
-    fg42.outputs.packages.${system}.default
     git
     nodePackages.svgo
     nodejs_22
@@ -139,6 +138,21 @@
       enable = true;
       extraPackages = epkgs: [
         epkgs.magit
+      ];
+    };
+    fg42 = {
+      enable = true;
+      extraModules = [
+        {
+          fg42.fonts = [
+            pkgs.udev-gothic-nf
+          ];
+
+          fg42.font = {
+            name = "JetBrainsMono Nerd Font";
+            size = 11;
+          };
+        }
       ];
     };
     vim = {
