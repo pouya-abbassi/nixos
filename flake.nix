@@ -46,6 +46,8 @@
         agenix.packages.${system}.default
         deploy-rs.packages.${system}.default
       ];
+
+      fg42 = inputs.fg42.homeManagerModules.${system};
     in rec {
       inherit pkgs;
        nixosConfigurations = {
@@ -61,6 +63,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.pouya.imports = [
                 ./strix/home.nix
+                fg42.default
                 homeage.homeManagerModules.homeage
               ];
               home-manager.extraSpecialArgs = { inherit fg42 system; };
