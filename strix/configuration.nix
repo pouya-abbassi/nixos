@@ -102,19 +102,6 @@
     xwayland.enable = true;
   };
 
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us,ir";
-    xkb.variant = "dvorak,";
-    xkb.options = "grp:shifts_toggle";
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
-  };
-
   # Configure console keymap
   console.keyMap = "dvorak";
 
