@@ -48,9 +48,10 @@
       ];
 
       fg42 = inputs.fg42.homeManagerModules.${system};
-    in rec {
+    in
+    rec {
       inherit pkgs;
-       nixosConfigurations = {
+      nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           modules = [
             ./strix/configuration.nix

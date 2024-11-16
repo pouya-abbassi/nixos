@@ -86,7 +86,6 @@
     libsForQt5.skanlite
     loupe
     lxappearance
-    obs-studio
     pavucontrol
     pcmanfm
     protonmail-bridge-gui
@@ -111,15 +110,10 @@
     # code
     ansible
     awscli2
-    clang-tools
-    clojure
-    clojure-lsp
     git
     nodePackages.svgo
-    nodejs_22
     terraform
     tig
-    virtualenv
   ];
 
   programs = {
@@ -135,12 +129,14 @@
         EDITOR = "vim";
       };
     };
+
     emacs = {
       enable = true;
       extraPackages = epkgs: [
         epkgs.magit
       ];
     };
+
     fg42 = {
       enable = true;
       extraModules = [
@@ -156,24 +152,36 @@
         }
       ];
     };
+
     vim = {
       enable = true;
       extraConfig = builtins.readFile ../common/vimrc;
     };
+
     waybar = {
       enable = true;
       settings = import ./waybar/config.nix;
       style = builtins.readFile ./waybar/style.css;
     };
+
     hyprlock = {
       enable = true;
       settings = import ./hypr/hyprlock.nix;
     };
+
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-backgroundremoval
+      ];
+    };
+
     home-manager.enable = true;
   };
 
@@ -183,14 +191,16 @@
     xwayland.enable = true;
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = import ./hypr/hyprpaper.nix;
+  services = {
+    hyprpaper = {
+      enable = true;
+      settings = import ./hypr/hyprpaper.nix;
+    };
+
+    gnome-keyring.enable = true;
+
+    mpris-proxy.enable = true;
   };
-
-  services.gnome-keyring.enable = true;
-
-  services.mpris-proxy.enable = true;
 
   homeage = {
     identityPaths = [ "~/.ssh/id_ed25519" ];
