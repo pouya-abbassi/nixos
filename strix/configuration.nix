@@ -8,36 +8,24 @@
 
   powerManagement.enable = true;
   services.tlp = {
-        enable = true;
-        settings = {
-          CPU_SCALING_GOVERNOR_ON_AC = "performance";
-          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-          CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-          CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-          CPU_MIN_PERF_ON_AC = 0;
-          CPU_MAX_PERF_ON_AC = 100;
-          CPU_MIN_PERF_ON_BAT = 0;
-          CPU_MAX_PERF_ON_BAT = 20;
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
 
-          START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-          STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
 
-        };
+    };
   };
-
-  # Ledger Crypto Wallet fix
-  services.udev.extraRules = ''
-    # HW.1, Nano
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="1b7c|2b7c|3b7c|4b7c", TAG+="uaccess", TAG+="udev-acl"
-
-    # Blue, NanoS, Aramis, HW.2, Nano X, NanoSP, Stax, Ledger Test,
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
-
-    # Same, but with hidraw-based library (instead of libusb)
-    KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666"
-  '';
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -172,6 +160,8 @@
     };
   };
   services.blueman.enable = true;
+
+  hardware.ledger.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
