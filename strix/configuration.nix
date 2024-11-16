@@ -60,13 +60,13 @@
   age = {
     identityPaths = [ "/root/.ssh/id_ed25519" ];
     secrets = {
-      nextdns.file = ../secrets/nextdns.age;
+      dnscrypt.file = ../secrets/dnscrypt.age;
     };
   };
 
   services.dnscrypt-proxy2 = {
     enable = true;
-    configFile = config.age.secrets.nextdns.path;
+    configFile = config.age.secrets.dnscrypt.path;
   };
 
   systemd.services.dnscrypt-proxy2.serviceConfig = {
