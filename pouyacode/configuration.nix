@@ -7,7 +7,6 @@
     ./nginx.nix
   ];
 
-  boot.tmp.cleanOnBoot = true;
   zramSwap.enable = false;
 
   networking = {
@@ -18,7 +17,7 @@
       allowedTCPPorts = [
         80
         443
-        7890                    # GoAccess
+        7890 # GoAccess
       ];
     };
   };

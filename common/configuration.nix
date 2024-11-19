@@ -13,6 +13,8 @@
     ];
   };
 
+  boot.tmp.useTmpfs = true;
+
   networking = {
     firewall = {
       enable = true;
