@@ -4,6 +4,9 @@
   stylix.enable = true;
   stylix.image = ./wall.jpg;
   stylix.polarity = "dark";
+
+  stylix.targets.grub.enable = false;
+
   stylix.fonts = {
     serif = {
       package = pkgs.dejavu_fonts;
