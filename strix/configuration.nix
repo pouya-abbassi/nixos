@@ -184,9 +184,11 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
-    fira-mono
+    fira-code
     font-awesome
+    ubuntu_font_family
     vazir-fonts
+    xkcd-font
   ];
 
   system.stateVersion = "23.11";

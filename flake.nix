@@ -10,7 +10,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/b667a340730dd3d0596083aa7c949eef01367c62";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -67,6 +67,9 @@
                 fg42.default
                 homeage.homeManagerModules.homeage
               ];
+              home-manager.sharedModules = [{
+                stylix.targets.hyprlock.enable = false;
+              }];
               home-manager.extraSpecialArgs = { inherit fg42 system; };
             }
           ];

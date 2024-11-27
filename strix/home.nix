@@ -130,13 +130,6 @@
       };
     };
 
-    emacs = {
-      enable = true;
-      extraPackages = epkgs: [
-        epkgs.magit
-      ];
-    };
-
     fg42 = {
       enable = true;
       extraModules = [
