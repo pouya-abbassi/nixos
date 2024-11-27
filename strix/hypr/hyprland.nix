@@ -67,10 +67,11 @@
         passes = 1;
       };
 
-      drop_shadow = "yes";
-      shadow_range = 4;
-      shadow_render_power = 3;
-      "col.shadow" = "rgba(1a1a1aee)";
+      shadow = {
+        range = 4;
+        render_power = 3;
+        color = "rgba(1a1a1aee)";
+      };
     };
 
   # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
@@ -95,7 +96,7 @@
 
   # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
   master = {
-    new_status= "master";
+    new_status = "master";
   };
 
   # See https://wiki.hyprland.org/Configuring/Variables/ for more
