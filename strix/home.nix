@@ -74,6 +74,7 @@
     darktable
     dolphin
     evince
+    ffmpegthumbnailer
     gimp
     gnome-disk-utility
     gparted
