@@ -1,0 +1,87 @@
+diff --git a/config.def.h b/config.def.h
+index 01dff50..e55a4e8 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,8 +5,8 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true";
+-static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true" };
++static char *font = "JetBrainsMono Nerd Font :pixelsize=12:antialias=true:autohint=true";
++static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=12:antialias=true:autohint=true" };
+ static int borderpx = 0;
+ 
+ /*
+@@ -91,10 +91,10 @@ const int boxdraw_braille = 1;
+  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
+  * it
+  */
+-static int bellvolume = 0;
++static int bellvolume = 50;
+ 
+ /* default TERM value */
+-char *termname = "st-256color";
++char *termname = "tmux-256color";
+ 
+ /*
+  * spaces per tab
+@@ -114,32 +114,35 @@ char *termname = "st-256color";
+ unsigned int tabspaces = 8;
+ 
+ /* bg opacity */
+-float alpha = 1.0;
++float alpha = 0.9;
+ 
+-/* Terminal colors (16 first used in escape sequence) */
++/* Terminal colors (16 first used in escape sequence)
++ * Based on Terminator's Ambience color scheme
++ */
+ static const char *colorname[] = {
+-  "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+-  "#cc241d",
+-  "#98971a",
+-  "#d79921",
+-  "#458588",
+-  "#b16286",
+-  "#689d6a",
+-  "#a89984",
+-  "#928374",
+-  "#fb4934",
+-  "#b8bb26",
+-  "#fabd2f",
+-  "#83a598",
+-  "#d3869b",
+-  "#8ec07c",
+-  "#ebdbb2",
++  /* 8 normal colors */
++  "#2e3436",
++  "#cc0000",
++  "#4e9a06",
++  "#c4a000",
++  "#3465a4",
++  "#75507b",
++  "#06989a",
++  "#e6dfd0",
++  /* 8 bright colors */
++  "#555753",
++  "#ef2929",
++  "#8ae234",
++  "#fce94f",
++  "#729fcf",
++  "#ad7fa8",
++  "#34e2e2",
++  "#fff8e7",
+   [255] = 0,
+-  /* more colors can be added after 255 to use with DefaultXX */
+-  "#add8e6", /* 256 -> cursor */
+-  "#555555", /* 257 -> rev cursor*/
+-  "#282828", /* 258 -> bg */
+-  "#ffffff", /* 259 -> fg */
++  "#fff8e7", /* 256 -> cursor (Cosmic Latte)*/
++  "#1f1e1c", /* 257 -> rev cursor (darker Cosmic Latte)*/
++  "#1f1e1c", /* 258 -> bg */
++  "#fff8e7", /* 259 -> fg */
+ };
+ 
+ 

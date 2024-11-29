@@ -1,4 +1,4 @@
-{ config, pkgs, fg42, lib, ... }:
+{ pkgs, lib, st, ... }:
 
 {
   home.username = "pouya";
@@ -94,6 +94,7 @@
     siril
     slack
     spotify
+    st
     sublime
     telegram-desktop
     terminator
