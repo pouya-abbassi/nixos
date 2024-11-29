@@ -14,7 +14,7 @@
     "swayidle -w timeout 900  'hyprlock'"
   ];
 
-  "$terminal" = "terminator";
+  "$terminal" = "st tmux";
   "$fileManager" = "pcmanfm";
   "$menu" = "rofi -show drun -show-icons -theme arthur";
   "$hyprshot" = "hyprshot -m output --clipboard-only";

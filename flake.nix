@@ -33,6 +33,8 @@
       url = "github:aarongpower/homeage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    st.url = "github:siduck/st/a7582f9";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, stylix, fg42, deploy-rs, agenix, homeage, ... }:
@@ -42,12 +44,15 @@
         inherit system;
       };
 
-      nativeBuildInputs = with pkgs; [
+      nativeBuildInputs = [
         agenix.packages.${system}.default
         deploy-rs.packages.${system}.default
       ];
 
       fg42 = inputs.fg42.homeManagerModules.${system};
+      st = inputs.st.packages."${system}".st-snazzy.override {
+        patches = [ ./strix/st-snazzy.patch ];
+      };
     in
     rec {
       inherit pkgs;
@@ -70,7 +75,7 @@
               home-manager.sharedModules = [{
                 stylix.targets.hyprlock.enable = false;
               }];
-              home-manager.extraSpecialArgs = { inherit fg42 system; };
+              home-manager.extraSpecialArgs = { inherit fg42 st system; };
             }
           ];
         };
