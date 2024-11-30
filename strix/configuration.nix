@@ -50,12 +50,6 @@
     };
     hostName = "nixos";
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    extraHosts = ''
-      51.20.101.249 bildigo.server
-      16.170.13.15 bildigo.staging
-      136.244.91.182 bildigo.community
-    '';
-
     nat = {
       enable = true;
       # externalInterface = "wlp5s0";
