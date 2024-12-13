@@ -10,6 +10,7 @@
     # utils
     ack
     aria2
+    asusctl
     bat
     btop
     dig
