@@ -34,7 +34,6 @@
     pass
     pciutils
     pinentry-curses
-    protonvpn-cli
     ripgrep
     smartmontools
     sshfs
@@ -89,9 +88,6 @@
     lxappearance
     pavucontrol
     pcmanfm
-    protonmail-bridge-gui
-    protonup-qt
-    protonvpn-gui
     siril
     slack
     spotify
