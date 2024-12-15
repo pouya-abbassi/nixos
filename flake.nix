@@ -84,6 +84,7 @@
           system = "x86_64-linux";
           modules = [
             ./pouyacode/configuration.nix
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
