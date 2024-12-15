@@ -19,6 +19,9 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ];
+      allowedUDPPorts = [
+        51820 # wg
+      ];
       allowedUDPPortRanges = [
         { from = 32768; to = 60999; } # Tor Snowflake
       ];

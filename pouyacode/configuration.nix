@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -13,11 +13,62 @@
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
     hostName = "pouyacode";
     domain = "pouyacode.net";
+    nat = {
+      enable = true;
+      enableIPv6 = true;
+      externalInterface = "ens3";
+      internalInterfaces = [ "wg0" ];
+    };
     firewall = {
       allowedTCPPorts = [
         80
         443
         7890 # GoAccess
+      ];
+    };
+  };
+
+  age = {
+    identityPaths = [ "/root/.ssh/id_ed25519" ];
+    secrets = {
+      wg-server.file = ../secrets/wg-server.age;
+    };
+  };
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [
+        "10.100.0.1/24"
+        "fd0d:86fa:c3bc::1/64"
+      ];
+      listenPort = 51820;
+
+      postSetup = ''
+        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o ens3 -j MASQUERADE
+        ${pkgs.iptables}/bin/ip6tables -t nat -A POSTROUTING -s fd0d:86fa:c3bc::/64 -o ens3 -j MASQUERADE
+      '';
+      postShutdown = ''
+        ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o ens3 -j MASQUERADE
+        ${pkgs.iptables}/bin/ip6tables -t nat -D POSTROUTING -s fd0d:86fa:c3bc::/64 -o ens3 -j MASQUERADE
+      '';
+
+      privateKeyFile = config.age.secrets.wg-server.path;
+
+      peers = [
+        {
+          publicKey = "iP0f5LZ37LzUsn2PKRknj15zcY/dMZXVZNXl+TNnRhk=";
+          allowedIPs = [
+            "10.100.0.2/32"
+            "fd0d:86fa:c3bc::2/64"
+          ];
+        }
+        {
+          publicKey = "S02fBhnlSADsPQ9CF4WdcbTvf/ePtiFlb8T3bTZmgTA=";
+          allowedIPs = [
+            "10.100.0.3/32"
+            "fd0d:86fa:c3bc::3/64"
+          ];
+        }
       ];
     };
   };

@@ -52,14 +52,18 @@
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     nat = {
       enable = true;
-      # externalInterface = "wlp5s0";
-      # internalInterfaces = [ "wg0" ];
+      enableIPv6 = true;
     };
 
     # proxy = {
     #   default = "http://user:password@proxy:port/";
     #   noProxy = "127.0.0.1,localhost,internal.domain";
     # };
+
+    firewall = {
+      checkReversePath = "loose";
+      logReversePathDrops = true;
+    };
   };
 
   age = {

@@ -6,4 +6,5 @@ in
 {
   "noti.age".publicKeys = [ pouya ];
   "dnscrypt.age".publicKeys = [ pouya ];
+  "wg-server.age".publicKeys = [ pouya ];
 }
