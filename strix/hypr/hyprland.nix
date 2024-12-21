@@ -10,7 +10,7 @@
 
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   exec-once = [
-    "waybar & nm-applet & hyprpaper & mako & udiskie & librewolf"
+    "waybar & nm-applet & hyprpaper & mako & udiskie & librewolf & xhost + local:"
     "swayidle -w timeout 900  'hyprlock'"
   ];
 

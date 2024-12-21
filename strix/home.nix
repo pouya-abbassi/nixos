@@ -48,6 +48,7 @@
     v2raya
     wget
     whois
+    xorg.xhost
     zip
     zsh
     zsh-autosuggestions
@@ -78,6 +79,7 @@
     gnome-disk-utility
     gparted
     graphite-kde-theme
+    hiddify-app
     inkscape
     ledger-live-desktop
     libreoffice
