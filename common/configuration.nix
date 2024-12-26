@@ -56,7 +56,6 @@
 
     ohMyZsh = {
       enable = true;
-      plugins = [ "git" "lein" ];
       theme = "bira";
     };
   };

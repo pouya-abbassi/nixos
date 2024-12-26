@@ -38,6 +38,13 @@
     zsh-syntax-highlighting
   ];
 
+  programs.zsh = {
+    enable = true;
+    sessionVariables = {
+      EDITOR = "vim";
+    };
+  };
+
   programs.vim = {
     enable = true;
     extraConfig = builtins.readFile ../common/vimrc;
