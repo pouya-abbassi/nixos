@@ -119,9 +119,21 @@
   programs = {
     zsh = {
       enable = true;
+      autocd = true;
+      defaultKeymap = "emacs";
       sessionVariables = {
         EDITOR = "vim";
       };
+      initExtra = ''
+        # Fix issue with delete key
+        bindkey "^[[3~" delete-char
+        # Fix issue with up arrow
+        bindkey "''${key[Up]}" up-line-or-search
+        # case insensitive path-completion
+        autoload -Uz +X compinit && compinit
+        zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+        zstyle ':completion:*' menu select
+      '';
     };
 
     tmux = {

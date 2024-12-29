@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   nix.settings = {
@@ -35,8 +35,14 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    autosuggestions = {
+      enable = true;
+      strategy = [
+        "history"
+        "match_prev_cmd"
+      ];
+    };
 
     shellInit = "eval \"$(direnv hook zsh)\"";
 
@@ -53,10 +59,41 @@
       "....." = "../../../..";
       "......" = "../../../../..";
     };
+  };
 
-    ohMyZsh = {
-      enable = true;
-      theme = "bira";
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      directory.truncate_to_repo = false;
+      sudo.disabled = false;
+      sudo.format = "[$symbol]($style)";
+      git_branch.format = " [$symbol$branch(:$remote_branch)]($style) ";
+      git_commit.only_detached = false;
+      format = lib.concatStrings [
+        "╭─ "
+        "$username"
+        "$hostname"
+        "$directory"
+        "$rust"
+        "$go"
+        "$terraform"
+        "$package"
+        "$nix_shell"
+        "$git_branch"
+        "$git_commit"
+        "$git_state"
+        "$git_metrics"
+        "$git_status"
+        "$cmd_duration"
+        "$sudo"
+        "$line_break"
+        "$character"
+      ];
+      character = {
+        success_symbol = "╰─[\\$](bold white)";
+        error_symbol = "╰─[\\$](bold red)";
+      };
     };
   };
 
