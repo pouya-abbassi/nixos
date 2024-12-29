@@ -17,6 +17,7 @@
     encfs
     ffmpeg
     file
+    git
     gnupg
     hdparm
     htop
@@ -106,14 +107,6 @@
     firefox
     librewolf
     chromium
-
-    # code
-    ansible
-    awscli2
-    git
-    nodePackages.svgo
-    terraform
-    tig
   ];
 
   programs = {

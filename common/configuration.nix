@@ -131,6 +131,7 @@
 
   environment.systemPackages = with pkgs; [
     wireguard-tools
+    direnv
   ];
 
   services.locate = {
