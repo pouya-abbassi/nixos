@@ -7,12 +7,24 @@
     ./nginx.nix
   ];
 
-  zramSwap.enable = false;
+  zramSwap.enable = true;
 
   networking = {
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
     hostName = "pouyacode";
     domain = "pouyacode.net";
+    defaultGateway6 = {
+      address = "2001:41d0:801:2000::1";
+      interface = "ens3";
+    };
+    interfaces."ens3".ipv6 = {
+      addresses = [
+        {
+          address = "2001:41d0:801:2000::57d3";
+          prefixLength = 64;
+        }
+      ];
+    };
     nat = {
       enable = true;
       enableIPv6 = true;
