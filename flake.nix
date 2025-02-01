@@ -33,8 +33,6 @@
       url = "github:aarongpower/homeage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    st.url = "github:siduck/st/a7582f9";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, stylix, fg42, deploy-rs, agenix, homeage, ... }:
@@ -50,9 +48,9 @@
       ];
 
       fg42 = inputs.fg42.homeManagerModules.${system};
-      st = inputs.st.packages."${system}".st-snazzy.override {
+      st = pkgs.st-snazzy.overrideDerivation (oldAttrs: {
         patches = [ ./strix/st-snazzy.patch ];
-      };
+      });
     in
     rec {
       inherit pkgs;
