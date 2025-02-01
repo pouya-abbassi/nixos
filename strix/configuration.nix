@@ -181,8 +181,8 @@
   services.asusd = {
     enable = true;
     enableUserService = true;
-    profileConfig = "balanced";
-    fanCurvesConfig = builtins.readFile ./rog/fan_curve.ron;
+    profileConfig.text = "balanced";
+    fanCurvesConfig.source = ./rog/fan_curve.ron;
   };
 
   services.supergfxd = {
