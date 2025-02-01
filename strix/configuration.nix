@@ -172,7 +172,7 @@
   services.clamav = {
     scanner = {
       enable = true;
-      interval = "*-*-* 19:00:00";
+      interval = "Sat *-*-* 15:00:00";
     };
     updater.enable = true;
     daemon.enable = true;
