@@ -63,9 +63,11 @@
     #   noProxy = "127.0.0.1,localhost,internal.domain";
     # };
 
-    firewall = {
+    firewall = rec {
       checkReversePath = "loose";
       logReversePathDrops = true;
+      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedUDPPortRanges = allowedTCPPortRanges;
     };
   };
 
@@ -188,6 +190,29 @@
   services.supergfxd = {
     enable = true;
     settings = builtins.readFile ./rog/supergfxd.conf;
+  };
+
+  services.syncthing = {
+    enable = true;
+    user = "pouya";
+    group = "users";
+    dataDir = "/home/pouya";
+    overrideDevices = true;
+    overrideFolders = true;
+    openDefaultPorts = true;
+    settings = {
+      options.urAccepted = -1;
+      devices = {
+        "x4" = { id = "D3VI3WJ-QLE7L4L-VSCUZQE-COORJYU-WAAQNU4-SRZAWBA-R5SYIUS-UYUUVAF"; };
+        "s25" = { id = "GRN2FJF-ISRGNY4-NDTGNYW-5ZXMEPU-FOJXH4R-UZPQIHP-R5MKY5S-WU7UFAR"; };
+      };
+      folders = {
+        "notes" = {
+          path = "~/notes";
+          devices = [ "x4" "s25" ];
+        };
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [

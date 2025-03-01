@@ -216,6 +216,11 @@
     gnome-keyring.enable = true;
 
     mpris-proxy.enable = true;
+
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
   };
 
   homeage = {
