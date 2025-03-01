@@ -55,7 +55,7 @@
     rec {
       inherit pkgs;
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        strix = nixpkgs.lib.nixosSystem {
           modules = [
             ./strix/configuration.nix
             ./strix/stylix.nix

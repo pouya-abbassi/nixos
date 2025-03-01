@@ -69,11 +69,9 @@
     wl-clipboard
 
     # gui
-    ark
     blender-hip
     calibre
     darktable
-    dolphin
     evince
     ffmpegthumbnailer
     gimp
@@ -82,8 +80,10 @@
     graphite-kde-theme
     hiddify-app
     inkscape
+    kdePackages.ark
     ledger-live-desktop
     libreoffice
+    libsForQt5.dolphin
     libsForQt5.filelight
     libsForQt5.qt5ct
     libsForQt5.skanlite

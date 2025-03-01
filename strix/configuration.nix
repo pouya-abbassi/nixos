@@ -51,7 +51,7 @@
       enable = true;
       dns = "none";
     };
-    hostName = "nixos";
+    hostName = "strix";
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     nat = {
       enable = true;
@@ -135,7 +135,7 @@
 
   # Enable sound with pipewire.
   #sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
