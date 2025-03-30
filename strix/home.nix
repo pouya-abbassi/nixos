@@ -74,7 +74,7 @@
     darktable
     evince
     ffmpegthumbnailer
-    gimp
+    gimp-with-plugins
     gnome-disk-utility
     gparted
     graphite-kde-theme
