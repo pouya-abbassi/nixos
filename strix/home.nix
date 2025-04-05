@@ -38,6 +38,7 @@
     ripgrep
     smartmontools
     sshfs
+    terraform
     thefuck
     tldr
     traceroute
