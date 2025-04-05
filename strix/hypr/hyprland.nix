@@ -10,7 +10,7 @@
 
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   exec-once = [
-    "waybar & nm-applet & hyprpaper & mako & udiskie & librewolf & xhost + local:"
+    "waybar & nm-applet & hyprpaper & swaync & udiskie & librewolf & xhost + local:"
     "swayidle -w timeout 900  'hyprlock'"
   ];
 
@@ -135,6 +135,7 @@
     "$mainMod, E, exec, $fileManager"
     "$mainMod, SPACE, togglefloating,"
     "$mainMod, D, exec, $menu"
+    "$mainMod, N, exec, swaync-client -t"
     "$mainMod, P, pseudo," # dwindle
     "$mainMod, V, togglesplit," # dwindle
     "$mainMod, W, fullscreen,"

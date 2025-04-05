@@ -56,7 +56,6 @@
     zsh-syntax-highlighting
 
     # desktop
-    dunst
     hyprland
     hyprlock
     hyprpaper
@@ -66,6 +65,7 @@
     nvtopPackages.amd
     rofi-wayland
     swayidle
+    swaynotificationcenter
     wl-clipboard
 
     # gui
