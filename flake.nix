@@ -16,7 +16,6 @@
 
     fg42 = {
       url = "git+https://git.sr.ht/~lxsameer/FG42";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     deploy-rs = {
