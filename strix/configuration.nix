@@ -128,7 +128,7 @@
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = [ pkgs.cnijfilter_4_00 ];
+    drivers = [ pkgs.cnijfilter2 ];
   };
   # Enable SANE to scan documents.
   # hardware.sane.enable = true;
