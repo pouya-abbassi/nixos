@@ -10,6 +10,7 @@
   stylix.cursor = {
     package = pkgs.rose-pine-cursor;
     name = "BreezeX-RosePineDawn-Linux";
+    size = 20;
   };
 
   stylix.fonts = {
