@@ -43,6 +43,10 @@
     sensitivity = 0; # -1.0 to 1.0, 0 means no modification.
   };
 
+  cursor = {
+    hide_on_key_press = true;
+  };
+
   # See https://wiki.hyprland.org/Configuring/Variables/ for more
   general = {
     gaps_in = 5;
