@@ -35,7 +35,6 @@
       allowedTCPPorts = [
         80
         443
-        3443 # mtproto
         7890 # GoAccess
       ];
     };
@@ -96,14 +95,6 @@
         maxretry = 5;
         findtime = 600;
       };
-    };
-  };
-
-  services.mtprotoproxy = {
-    enable = true;
-    port = 3443;
-    users = {
-      tg = "0fbc8fbb1256f82dd66e59ff27269b2b";
     };
   };
 
