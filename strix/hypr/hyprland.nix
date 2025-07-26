@@ -15,7 +15,7 @@
   ];
 
   "$terminal" = "st tmux";
-  "$fileManager" = "pcmanfm";
+  "$fileManager" = "thunar";
   "$menu" = "rofi -show drun -show-icons -theme arthur";
   "$hyprshot" = "hyprshot -m output --clipboard-only";
   "$hyprlock" = "hyprlock";

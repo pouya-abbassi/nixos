@@ -91,7 +91,6 @@
     loupe
     lxappearance
     pavucontrol
-    pcmanfm
     siril
     slack
     spotify

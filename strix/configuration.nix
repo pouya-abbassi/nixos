@@ -111,19 +111,32 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Steam Remote Play
+      localNetworkGameTransfers.openFirewall = true; # Local Network Game Transfers
+    };
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce  ; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
+  };
+
+  services = {
+    gvfs.enable = true; # Thunar mount, trash, ethc.
+    tumbler.enable = true; # Thunar image thumbnail
   };
 
   # Configure console keymap
   console.keyMap = "dvorak";
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Steam Remote Play
-    localNetworkGameTransfers.openFirewall = true; # Local Network Game Transfers
-  };
 
   # Enable CUPS to print documents.
   services.printing = {
