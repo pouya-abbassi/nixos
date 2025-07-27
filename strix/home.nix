@@ -39,7 +39,6 @@
     smartmontools
     sshfs
     terraform
-    thefuck
     tldr
     traceroute
     tree
@@ -70,12 +69,12 @@
     wl-clipboard
 
     # gui
+    amnezia-vpn
     blender-hip
     calibre
-    darktable
     evince
     ffmpegthumbnailer
-    gimp-with-plugins
+    gimp
     gnome-disk-utility
     gparted
     graphite-kde-theme
@@ -91,7 +90,6 @@
     loupe
     lxappearance
     pavucontrol
-    siril
     slack
     spotify
     st
@@ -99,14 +97,14 @@
     telegram-desktop
     terminator
     thunderbird
-    ventoy
     vlc
     zafiro-icons
 
     # browsers
+    chromium
     firefox
     librewolf
-    chromium
+    zeal-qt6
   ];
 
   programs = {

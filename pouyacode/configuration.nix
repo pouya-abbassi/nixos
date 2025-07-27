@@ -68,6 +68,7 @@
 
       peers = [
         {
+          name = "laptop";
           publicKey = "iP0f5LZ37LzUsn2PKRknj15zcY/dMZXVZNXl+TNnRhk=";
           allowedIPs = [
             "10.100.0.2/32"
@@ -75,6 +76,7 @@
           ];
         }
         {
+          name = "phone";
           publicKey = "S02fBhnlSADsPQ9CF4WdcbTvf/ePtiFlb8T3bTZmgTA=";
           allowedIPs = [
             "10.100.0.3/32"
@@ -112,9 +114,10 @@
 
   environment.systemPackages = with pkgs; [
     bat
-    vim
     git
     goaccess
+    tmux
+    vim
   ];
 
   system.stateVersion = "23.11";
