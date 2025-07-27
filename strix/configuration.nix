@@ -46,7 +46,13 @@
   };
 
   networking = {
-    nameservers = [ "127.0.0.1" "::1" ];
+    enableIPv6 = true;
+    nameservers = [
+      "45.90.28.40"
+      "45.90.30.40"
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
     networkmanager = {
       enable = true;
       dns = "none";
@@ -71,22 +77,22 @@
     };
   };
 
-  age = {
-    identityPaths = [ "/root/.ssh/id_ed25519" ];
-    secrets = {
-      dnscrypt.file = ../secrets/dnscrypt.age;
-    };
-  };
+  # age = {
+  #   identityPaths = [ "/root/.ssh/id_ed25519" ];
+  #   secrets = {
+  #     dnscrypt.file = ../secrets/dnscrypt.age;
+  #   };
+  # };
 
-  services.dnscrypt-proxy2 = {
-    enable = true;
-    configFile = config.age.secrets.dnscrypt.path;
-  };
+  # services.dnscrypt-proxy2 = {
+  #   enable = true;
+  #   configFile = config.age.secrets.dnscrypt.path;
+  # };
 
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
-    User = "root";
-  };
+  # systemd.services.dnscrypt-proxy2.serviceConfig = {
+  #   StateDirectory = "dnscrypt-proxy";
+  #   User = "root";
+  # };
 
   users.users.pouya = {
     isNormalUser = true;

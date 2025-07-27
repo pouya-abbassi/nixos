@@ -8,7 +8,12 @@
   ];
 
   networking = {
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    nameservers = [
+      "2a07:a8c0::4a:d65b"
+      "2a07:a8c1::4a:d65b"
+      "45.90.28.40"
+      "45.90.30.40"
+    ];
     hostName = "pouyacode";
     domain = "pouyacode.net";
     defaultGateway6 = {
@@ -85,15 +90,26 @@
     };
   };
 
-  services.fail2ban = {
-    jails = {
-      ngnix-url-probe.settings = {
-        enabled = true;
-        filter = "nginx-url-probe";
-        logpath = "/var/log/nginx/access.log";
-        backend = "auto";
-        maxretry = 5;
-        findtime = 600;
+  services = {
+    fail2ban = {
+      jails = {
+        ngnix-url-probe.settings = {
+          enabled = true;
+          filter = "nginx-url-probe";
+          logpath = "/var/log/nginx/access.log";
+          backend = "auto";
+          maxretry = 5;
+          findtime = 600;
+        };
+      };
+    };
+    doh-server = {
+      enable = true;
+      settings = {
+        upstream = [
+          "udp:[2a07:a8c0::4a:d65b]:53"
+          "udp:[2a07:a8c1::4a:d65b]:53"
+        ];
       };
     };
   };
