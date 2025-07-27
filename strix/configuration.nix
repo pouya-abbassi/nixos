@@ -56,6 +56,9 @@
     networkmanager = {
       enable = true;
       dns = "none";
+      plugins = (with pkgs; [
+        networkmanager-openvpn
+      ]);
     };
     hostName = "strix";
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
