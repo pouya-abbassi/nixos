@@ -208,7 +208,7 @@
   services.asusd = {
     enable = true;
     enableUserService = true;
-    profileConfig.text = "balanced";
+    profileConfig.text = "quiet";
     fanCurvesConfig.source = ./rog/fan_curve.ron;
   };
 
