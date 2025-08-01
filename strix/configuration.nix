@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -137,7 +137,10 @@
         thunar-volman
       ];
     };
+    amnezia-vpn.enable = true;
   };
+
+  services.resolved.enable = lib.mkForce false;
 
   services = {
     gvfs.enable = true; # Thunar mount, trash, ethc.
