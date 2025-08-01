@@ -5,6 +5,11 @@
     enable = true;
     statusPage = true;
 
+    recommendedBrotliSettings = true;
+    recommendedGzipSettings = true;
+    recommendedOptimisation = true;
+    recommendedTlsSettings = true;
+
     virtualHosts = {
       "pouyacode" = {
         serverName = "pouyacode.net";
