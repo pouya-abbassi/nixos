@@ -63,6 +63,7 @@
       sudo.format = "[$symbol]($style)";
       git_branch.format = " [$symbol$branch(:$remote_branch)]($style) ";
       git_commit.only_detached = false;
+      git_metrics.disabled = false;
       format = lib.concatStrings [
         "╭─ "
         "$username"
@@ -70,6 +71,8 @@
         "$directory"
         "$rust"
         "$go"
+        "$python"
+        "$dart"
         "$terraform"
         "$package"
         "$nix_shell"
@@ -80,6 +83,7 @@
         "$git_status"
         "$cmd_duration"
         "$sudo"
+        "$cmd_duration"
         "$line_break"
         "$character"
       ];
