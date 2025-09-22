@@ -67,6 +67,7 @@
     swayidle
     swaynotificationcenter
     wl-clipboard
+    wlsunset
 
     # gui
     amnezia-vpn
