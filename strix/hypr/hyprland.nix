@@ -105,9 +105,7 @@
   };
 
   # See https://wiki.hyprland.org/Configuring/Variables/ for more
-  gestures = {
-    workspace_swipe = "off";
-  };
+  gestures = "3, horizontal, workspace";
 
   # See https://wiki.hyprland.org/Configuring/Variables/ for more
   misc = {

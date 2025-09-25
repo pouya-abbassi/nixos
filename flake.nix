@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    legacy.url = "github:nixos/nixpkgs/b2a3852bd078e68dd2b3dfa8c00c67af1f0a7d20";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,11 +35,15 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, fg42, deploy-rs, agenix, homeage, ... }:
+  outputs = inputs@{ self, nixpkgs, legacy, home-manager, stylix, fg42, deploy-rs, agenix, homeage, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
+      };
+      legacypkgs = import legacy {
+        inherit system;
+        config.allowUnfree = true;
       };
 
       nativeBuildInputs = [
@@ -50,6 +55,7 @@
       st = pkgs.st-snazzy.overrideDerivation (oldAttrs: {
         patches = [ ./strix/st-snazzy.patch ];
       });
+      hiddify = legacypkgs.hiddify-app;
     in
     rec {
       inherit pkgs;
@@ -72,7 +78,7 @@
               home-manager.sharedModules = [{
                 stylix.targets.hyprlock.enable = false;
               }];
-              home-manager.extraSpecialArgs = { inherit fg42 st system; };
+              home-manager.extraSpecialArgs = { inherit fg42 st hiddify system; };
             }
           ];
         };

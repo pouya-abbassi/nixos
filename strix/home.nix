@@ -1,4 +1,4 @@
-{ pkgs, lib, st, ... }:
+{ pkgs, lib, st, hiddify, ... }:
 
 {
   home.username = "pouya";
@@ -63,7 +63,7 @@
     libnotify
     networkmanagerapplet
     nvtopPackages.amd
-    rofi-wayland
+    rofi
     swayidle
     swaynotificationcenter
     wl-clipboard
@@ -78,16 +78,15 @@
     gimp
     gnome-disk-utility
     gparted
-    graphite-kde-theme
-    hiddify-app
+    hiddify
     inkscape
     kdePackages.ark
     ledger-live-desktop
     libreoffice
-    libsForQt5.dolphin
-    libsForQt5.filelight
-    libsForQt5.qt5ct
-    libsForQt5.skanlite
+    kdePackages.dolphin
+    kdePackages.filelight
+    kdePackages.qt6ct
+    kdePackages.skanlite
     loupe
     lxappearance
     pavucontrol
