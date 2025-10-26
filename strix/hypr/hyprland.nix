@@ -104,8 +104,8 @@
     new_status = "master";
   };
 
-  # See https://wiki.hyprland.org/Configuring/Variables/ for more
-  gestures = "3, horizontal, workspace";
+  # See https://wiki.hypr.land/Configuring/Gestures/ for more
+  gesture = "3, horizontal, workspace";
 
   # See https://wiki.hyprland.org/Configuring/Variables/ for more
   misc = {
