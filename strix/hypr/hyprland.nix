@@ -10,7 +10,7 @@
 
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   exec-once = [
-    "waybar & nm-applet & hyprpaper & swaync & udiskie & librewolf & xhost + local:"
+    "waybar & nm-applet & hyprpaper & swaync & udiskie & librewolf & xhost + local: & wl-paste --watch cliphist store"
     "swayidle -w timeout 900  'hyprlock'"
     "wlsunset -l 35 -L 51"
   ];
@@ -18,6 +18,7 @@
   "$terminal" = "st tmux";
   "$fileManager" = "thunar";
   "$menu" = "rofi -show drun -show-icons -theme arthur";
+  "$cliphist" = "cliphist list | rofi -dmenu -theme arthur | cliphist decode | wl-copy";
   "$hyprshot" = "hyprshot -m output --clipboard-only";
   "$hyprlock" = "hyprlock";
 
@@ -138,6 +139,7 @@
     "$mainMod, E, exec, $fileManager"
     "$mainMod, SPACE, togglefloating,"
     "$mainMod, D, exec, $menu"
+    "$mainMod, C, exec, $cliphist"
     "$mainMod, N, exec, swaync-client -t"
     "$mainMod, P, pseudo," # dwindle
     "$mainMod, V, togglesplit," # dwindle

@@ -13,6 +13,7 @@
     asusctl
     bat
     btop
+    cliphist
     dig
     encfs
     ffmpeg
