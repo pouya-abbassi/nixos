@@ -255,6 +255,11 @@
     settingsFile = config.age.secrets.searx.path;
   };
 
+  services.languagetool = {
+    enable = true;
+    allowOrigin = "*";
+  };
+
   environment.systemPackages = with pkgs; [
   ];
 
