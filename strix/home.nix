@@ -105,7 +105,7 @@
     chromium
     firefox
     librewolf
-    zeal-qt6
+    zeal
   ];
 
   programs = {

@@ -268,7 +268,7 @@
   fonts.packages = with pkgs; [
     fira-code
     font-awesome
-    ubuntu_font_family
+    ubuntu-classic
     vazir-fonts
     xkcd-font
   ];
