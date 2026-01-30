@@ -27,6 +27,7 @@
     lsof
     mlocate
     mtr
+    musikcube
     netcat
     nethogs
     nix-tree
