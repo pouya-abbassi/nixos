@@ -123,9 +123,9 @@
   # Example windowrule v1
   # windowrule = float, ^(kitty)$
   # Example windowrule v2
-  # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+  # windowrule = float,class:^(kitty)$,title:^(kitty)$
   # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-  windowrulev2 = "suppressevent maximize, class:.*"; # You'll probably like this.
+  windowrule = "match:class *, suppress_event maximize"; # You'll probably like this.
 
 
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more

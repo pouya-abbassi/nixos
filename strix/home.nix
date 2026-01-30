@@ -72,7 +72,7 @@
 
     # gui
     amnezia-vpn
-    blender-hip
+    pkgsRocm.blender
     calibre
     evince
     ffmpegthumbnailer
