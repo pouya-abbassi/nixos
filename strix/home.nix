@@ -49,6 +49,8 @@
     unzip
     usbutils
     v2raya
+    v2rayn
+    warp-plus
     wget
     whois
     xorg.xhost
@@ -92,6 +94,7 @@
     loupe
     lxappearance
     pavucontrol
+    protonvpn-gui
     slack
     spotify
     st
