@@ -48,7 +48,7 @@ button:hover {
 #idle_inhibitor {
     padding: 0 10px;
     color: #DDD;
-    background: alpha(#DDD, 0.1);
+    background: alpha(#444, 0.4);
     border-radius: 0 0 10px 10px;
 }
 

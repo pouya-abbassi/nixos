@@ -46,8 +46,23 @@
     };
     clock = {
       # timezone = "America/New_York";
-      tooltip-format = "<big>{:%F %a}</big>\n<tt><small>{calendar}</small></tt>";
+      interval = 1;
+      format = "{:%H:%M:%S}";
+      tooltip-format = "<small>UTC: {tz_list}</small><big>{:%F %a}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "{:%Y-%m-%d}";
+      timezones = [
+        ""
+        "UTC"
+      ];
+      calendar = {
+        mode = "month";
+        mode-mon-col = 3;
+      };
+      actions = {
+        # on-scroll-up: "shift_up";
+        # on-scroll-down: "shift_down";
+        on-click-right = "mode";
+      };
     };
     cpu = {
       format = "{usage}% ";
