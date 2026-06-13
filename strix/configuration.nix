@@ -132,7 +132,7 @@
     };
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce  ; [
+      plugins = with pkgs ; [
         thunar-archive-plugin
         thunar-volman
       ];
@@ -207,7 +207,6 @@
 
   services.asusd = {
     enable = true;
-    enableUserService = true;
     profileConfig.text = "quiet";
     fanCurvesConfig.source = ./rog/fan_curve.ron;
   };
@@ -273,5 +272,5 @@
     xkcd-font
   ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "26.05";
 }

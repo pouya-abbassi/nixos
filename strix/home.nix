@@ -4,7 +4,7 @@
   home.username = "pouya";
   home.homeDirectory = "/home/pouya";
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     # utils
@@ -40,7 +40,7 @@
     ripgrep
     smartmontools
     sshfs
-    terraform
+    # terraform
     tldr
     traceroute
     tree
@@ -50,10 +50,9 @@
     usbutils
     v2raya
     v2rayn
-    warp-plus
     wget
     whois
-    xorg.xhost
+    xhost
     zip
     zsh
     zsh-autosuggestions
@@ -94,7 +93,7 @@
     loupe
     lxappearance
     pavucontrol
-    protonvpn-gui
+    proton-vpn
     slack
     spotify
     st
@@ -208,6 +207,7 @@
     enable = true;
     settings = lib.mkForce (import ./hypr/hyprland.nix);
     xwayland.enable = true;
+    configType = "hyprlang";
   };
 
   services = {

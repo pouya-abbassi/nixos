@@ -48,7 +48,7 @@
       # timezone = "America/New_York";
       interval = 1;
       format = "{:%H:%M:%S}";
-      tooltip-format = "<small>UTC: {tz_list}</small><big>{:%F %a}</big>\n<tt><small>{calendar}</small></tt>";
+      tooltip-format = "<small>UTC: {tz_list}</small>\n<big>{:%F %a}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "{:%Y-%m-%d}";
       timezones = [
         ""

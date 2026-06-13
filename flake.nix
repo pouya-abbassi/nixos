@@ -2,7 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/26.05";
     legacy.url = "github:nixos/nixpkgs/b2a3852bd078e68dd2b3dfa8c00c67af1f0a7d20";
 
     home-manager = {

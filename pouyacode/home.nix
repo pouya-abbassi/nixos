@@ -4,7 +4,7 @@
   home.username = "pouya";
   home.homeDirectory = "/home/pouya";
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     # utils
