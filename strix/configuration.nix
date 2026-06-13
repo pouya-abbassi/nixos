@@ -200,9 +200,23 @@
     scanner = {
       enable = true;
       interval = "Sat *-*-* 15:00:00";
+      scanDirectories = [
+        "/home"
+        "/var/lib"
+        "/tmp"
+        "/etc"
+        "/var/tmp"
+      ];
     };
+    clamonacc.enable = true;
     updater.enable = true;
-    daemon.enable = true;
+    daemon = {
+      enable = true;
+      settings = {
+        OnAccessPrevention = true;
+        OnAccessIncludePath = "/home/pouya/Downloads";
+      };
+    };
   };
 
   services.asusd = {
