@@ -12,6 +12,7 @@
     aria2
     asusctl
     bat
+    bc
     btop
     cliphist
     dig
@@ -23,6 +24,7 @@
     hdparm
     htop
     iotop
+    jcal
     killall
     lsof
     mlocate
@@ -38,6 +40,7 @@
     pciutils
     pinentry-curses
     ripgrep
+    shellcheck
     smartmontools
     sshfs
     # terraform
