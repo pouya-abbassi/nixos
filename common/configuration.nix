@@ -141,5 +141,10 @@
     capacity = 100;
   };
 
+  services.journald.extraConfig = ''
+    SystemMaxUse=4G
+    MaxFileSec=30day
+  '';
+
   nixpkgs.config.allowUnfree = true;
 }
