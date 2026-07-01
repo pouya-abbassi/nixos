@@ -43,6 +43,7 @@
       nrs = "sudo nixos-rebuild switch --flake ~/src/nixos";
       ngc = "sudo nix-collect-garbage --delete-older-than 2d";
       nup = "sudo nix-channel --update";
+      ntf = "nix-tree '.#devShells.x86_64-linux.default' --derivation";
 
       cat = "bat";
       noti = "noti -g -f ~/.config/noti.yaml";
