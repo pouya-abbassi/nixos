@@ -37,4 +37,11 @@
       valign = "center";
     }
   ];
+
+  label = [
+    {
+      position = "0, -64";
+      text = "$LAYOUT[!,Persian]";
+    }
+  ];
 }
