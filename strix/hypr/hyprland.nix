@@ -11,7 +11,6 @@
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   exec-once = [
     "waybar & nm-applet & hyprpaper & swaync & udiskie & librewolf & xhost + local: & wl-paste --watch cliphist store"
-    "swayidle -w timeout 900  'hyprlock'"
     "wlsunset -l 35 -L 51"
   ];
 

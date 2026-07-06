@@ -273,6 +273,10 @@
     allowOrigin = "*";
   };
 
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+  };
+
   environment.systemPackages = with pkgs; [
   ];
 

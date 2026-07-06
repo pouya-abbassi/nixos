@@ -70,7 +70,6 @@
     networkmanagerapplet
     nvtopPackages.amd
     rofi
-    swayidle
     swaynotificationcenter
     wl-clipboard
     wlsunset
@@ -217,6 +216,11 @@
     hyprpaper = {
       enable = true;
       settings = import ./hypr/hyprpaper.nix;
+    };
+
+    hypridle = {
+      enable = true;
+      settings = import ./hypr/hypridle.nix;
     };
 
     gnome-keyring.enable = true;
