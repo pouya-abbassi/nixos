@@ -1,7 +1,7 @@
 {
   background = [
     {
-      path = "~/src/nixos/strix/lock.jpg";
+      path = "${../lock.jpg}";
       color = "rgba(25, 20, 20, 1.0)";
     }
   ];
