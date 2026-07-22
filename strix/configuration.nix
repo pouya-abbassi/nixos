@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common/configuration.nix
+    ../modules/searx.nix
   ];
 
   powerManagement = {
@@ -251,21 +252,6 @@
         };
       };
     };
-  };
-
-  age = {
-    identityPaths = [ "/root/.ssh/id_ed25519" ];
-    secrets.searx = {
-      file = ../secrets/searx.age;
-      owner = "searx";
-      group = "searx";
-    };
-  };
-
-  services.searx = {
-    enable = true;
-    redisCreateLocally = true;
-    settingsFile = config.age.secrets.searx.path;
   };
 
   services.languagetool = {
