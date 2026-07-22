@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../common/configuration.nix
     ../modules/searx.nix
+    ../modules/ollama.nix
   ];
 
   powerManagement = {
