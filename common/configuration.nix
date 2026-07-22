@@ -15,9 +15,6 @@
       allowedUDPPorts = [
         51820 # wg
       ];
-      allowedUDPPortRanges = [
-        { from = 32768; to = 60999; } # Tor Snowflake
-      ];
     };
   };
 
@@ -135,11 +132,6 @@
   services.locate = {
     enable = true;
     package = pkgs.mlocate;
-  };
-
-  services.snowflake-proxy = {
-    enable = true;
-    capacity = 100;
   };
 
   services.journald.extraConfig = ''
