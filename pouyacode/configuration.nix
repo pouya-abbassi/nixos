@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ../common/configuration.nix
+    ../modules/snowflake.nix
+    ./hardware-configuration.nix
     ./nginx.nix
   ];
 

@@ -2,10 +2,11 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ../common/configuration.nix
-    ../modules/searx.nix
     ../modules/ollama.nix
+    ../modules/searx.nix
+    ../modules/snowflake.nix
+    ./hardware-configuration.nix
   ];
 
   powerManagement = {
