@@ -12,6 +12,7 @@
     ];
     modules-right = [
       "idle_inhibitor"
+      "custom/tomat"
       "pulseaudio"
       "network"
       "cpu"
@@ -119,6 +120,15 @@
         default = [ "" "" "" ];
       };
       on-click = "pavucontrol";
+    };
+    "custom/tomat" = {
+      exec = "tomat status";
+      interval = 1;
+      return-type = "json";
+      format = "{text}";
+      tooltip = true;
+      on-click = "tomat toggle";
+      on-click-right = "tomat skip";
     };
   };
 }

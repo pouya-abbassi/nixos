@@ -4,9 +4,11 @@
   imports = [
     ../common/configuration.nix
     ../modules/ollama.nix
-    ../modules/strix-options.nix
     ../modules/searx.nix
     ../modules/snowflake.nix
+    ../modules/strix-options.nix
+    ../modules/strix.nix
+    ../modules/tomat.nix
     ../modules/wireshark.nix
     ./hardware-configuration.nix
   ];

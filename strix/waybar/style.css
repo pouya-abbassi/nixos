@@ -158,3 +158,43 @@ button:hover {
 #idle_inhibitor.activated {
     box-shadow: inset 0 3px #ECF0F1;
 }
+
+#custom-tomat {
+  padding: 0 10px;
+  background: alpha(#444, 0.4);
+  border-radius: 0 0 10px 10px;
+  font-weight: bold;
+}
+
+/* Work sessions */
+#custom-tomat.work {
+  box-shadow: inset 0 3px #ff6b6b;
+  color: #ffffff;
+}
+
+#custom-tomat.work-paused {
+  box-shadow: inset 0 3px #ff9999;
+  color: #ffffff;
+}
+
+/* Break sessions */
+#custom-tomat.break {
+  box-shadow: inset 0 3px #4ecdc4;
+  color: #ffffff;
+}
+
+#custom-tomat.break-paused {
+  box-shadow: inset 0 3px #7dd3db;
+  color: #ffffff;
+}
+
+/* Long break sessions */
+#custom-tomat.long-break {
+  box-shadow: inset 0 3px #45b7d1;
+  color: #ffffff;
+}
+
+#custom-tomat.long-break-paused {
+  box-shadow: inset 0 3px #74c0db;
+  color: #ffffff;
+}
